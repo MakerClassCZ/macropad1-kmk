@@ -67,7 +67,7 @@ encoder_handler = EncoderHandler()
 macros = Macros()
 media_keys = MediaKeys()
 
-encoder_handler.pins = ((board.GP16, board.GP17, None),)
+encoder_handler.pins = ((board.GP17, board.GP16, None),)
 encoder_handler.divisor = 4
 
 encoder_handler.map = (
@@ -88,14 +88,6 @@ def win_run(*commands):
 
 M_MEDIAPLAYER_CZ = win_run('ms-media-player:', Delay(100))
 M_NOTEPAD_CZ = win_run('notepad', Delay(100), Delay(300), 'Ahoj z MakerClass!')
-
-# Emoji makra pro TYPE vrstvu
-EMOJI_SMILE = KC.MACRO('😊')
-EMOJI_THUMBS = KC.MACRO('👍')
-EMOJI_STAR = KC.MACRO('⭐')
-EMOJI_HEART = KC.MACRO('❤️')
-EMOJI_PARTY = KC.MACRO('🎉')
-EMOJI_FIRE = KC.MACRO('🔥')
 
 RGB_MODES = [
     AnimationModes.STATIC,
@@ -146,12 +138,12 @@ keyboard.keymap = [
 
     # TYPE
     [
-        EMOJI_SMILE,  EMOJI_THUMBS,  KC.LT(_LAYER_SWITCH, EMOJI_STAR),  EMOJI_HEART,  EMOJI_PARTY,  EMOJI_FIRE,  KC.RGB_TOG
+        KC.M,  KC.A,  KC.LT(_LAYER_SWITCH, KC.K),  KC.E,  KC.R,  KC.S,  KC.RGB_TOG
     ],
 
     # UTILS
     [
-        RGB_MOD,  KC.RGB_HUI,  KC.LT(_LAYER_SWITCH, KC.NO),  KC.RGB_TOG,  KC.RELOAD,  KC.RGB_SPI,  KC.NO
+        RGB_MOD,  KC.RGB_HUI,  KC.LT(_LAYER_SWITCH, KC.NO),  KC.RGB_TOG,  KC.RELOAD,  KC.RGB_ANI,  KC.NO
     ],
 
     # LAYER_SWITCH
